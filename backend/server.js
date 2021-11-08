@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended: true})); //Video Create Signin backend
 
 mongoose.connect( process.env.MONGODB_URL || 'mongodb+srv://Victor11:vic11@amazona.tlb1u.mongodb.net/Amazona?retryWrites=true&w=majority',{
     // useNewUrlParser: true,
-    useUnifiedTopology: true,
+    // useUnifiedTopology: true,
     // useCreateIndex: true, 
 
 }).then(() => {
