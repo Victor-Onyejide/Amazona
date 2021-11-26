@@ -157,7 +157,7 @@ export default function ProductEditScreen(props) {
             <div>
                 <label htmlFor="description">Description</label>
                 <textarea id="description" rows="3" type="text" placeholder= "Enter name" value= {description}
-                onChange = {(e)=> setName(e.target.value)} ></textarea>
+                onChange = {(e)=> setDescription(e.target.value)} ></textarea>
             </div>
             <div>
                 <label></label>

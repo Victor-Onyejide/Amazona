@@ -26,3 +26,4 @@ yarn-error.log*
 .env
 /uploads/*.jpg
 isssue1.JPG
+errors.txt
