@@ -148,6 +148,7 @@ productRouter.post('/:id/reviews', isAuth, expressAsyncHandler(async(req, res) =
         }
         const review = {name: req.user.name, rating: Number(req.body.rating), comment: req.body.comment};
         product.reviews.push(review);
+        product.numReviews += 1;
 
         product.rating = product.reviews.reduce((a,c) => c.rating + a, 0) / product.reviews.length;
         

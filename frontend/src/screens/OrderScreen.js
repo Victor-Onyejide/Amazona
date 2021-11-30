@@ -20,7 +20,11 @@ export default function OrderScreen(props) {
     const {loading: loadingPay, error: errorPay, success: successPay} = orderPay;
 
     const userSignin = useSelector((state) => state.userSignin);
-    const { userInfo } = userSignin;
+    const { userInfo} = userSignin;
+
+    // const checkUserSignOut = useSelector((state) => state.checkUserSignOut);
+    // const {signout} = checkUserSignOut;
+
 
     const orderDeliver = useSelector((state) => state.orderDeliver);
     const {loading: loadingDeliver, error: errorDeliver, success: successDeliver} = orderDeliver;
@@ -56,8 +60,14 @@ export default function OrderScreen(props) {
                 }
             }
         }
+        // if(signout)
+        // {
+        //     console.log('Signout is true');
 
-    }, [dispatch, order, successPay, orderId,successDeliver]);
+        //     props.history.push("/signin");
+        // }
+
+    }, [dispatch, order, successPay, orderId, successDeliver]);
 
     const successPaymentHandler = (paymentResult) =>{
         dispatch(payOrder(order, paymentResult));
@@ -213,7 +223,7 @@ export default function OrderScreen(props) {
                                 )
                             }
 
-                            {
+                            { userInfo?
                                 userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                                     <li>
                                         {loadingDeliver && <LoadingBox></LoadingBox>}
@@ -223,7 +233,8 @@ export default function OrderScreen(props) {
                                         </button>
                                     </li>
                                 )
-                            }
+                            :
+                            null}
 
                         </ul>
 
