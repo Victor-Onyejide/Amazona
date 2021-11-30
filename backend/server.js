@@ -21,7 +21,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true})); //Video Create Signin backend
 
-mongoose.connect( process.env.MONGODB_URL || 'mongodb+srv://Victor11:vic11@amazona.tlb1u.mongodb.net/Amazona?retryWrites=true&w=majority',{
+mongoose.connect( process.env.MONGODB_URL || '',{
     // useNewUrlParser: true,
     // useUnifiedTopology: true,
     // useCreateIndex: true, 
